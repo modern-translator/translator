@@ -14,35 +14,14 @@
 <body>
   <div id="root"></div>
 
-  <!-- Load Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide-react.min.js"></script>
 
   <script type="text/babel">
-    import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { 
-  Upload, 
-  Loader2, 
-  CheckCircle2, 
-  X,
-  FileText,
-  AlertCircle,
-  ChevronRight,
-  BookOpen,
-  Settings,
-  Globe,
-  FileDown,
-  Sparkles,
-  HelpCircle,
-  Languages,
-  AlignLeft,
-  AlignRight,
-  Copy,
-  Check,
-  Eye,
-  SlidersHorizontal,
-  Zap,
-  ShieldCheck
-} from 'lucide-react';
+    const { useState, useRef, useEffect, useCallback } = React;
+const { 
+  Upload, Loader2, CheckCircle2, X, FileText, AlertCircle, ChevronRight, BookOpen, Settings, Globe, FileDown, Sparkles, HelpCircle, Languages, AlignLeft, AlignRight, Copy, Check, Eye, SlidersHorizontal, Zap, ShieldCheck 
+} = lucideReact;
 
 // Exponential backoff fetch implementation with timeout and abort handling.
 // `acquireSlot`, when provided, is awaited before EVERY attempt (including
@@ -1648,7 +1627,8 @@ const App = () => {
   );
 };
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
 
   </script>
 </body>
