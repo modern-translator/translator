@@ -9,7 +9,7 @@
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 <body>
   <div id="root"></div>
@@ -127,7 +127,13 @@ const App = () => {
     } catch (e) {}
     return Array(TOTAL_API_KEY_SLOTS).fill("");
   });
-  const [rememberApiKey, setRememberApiKey] = useState(() => !!localStorage.getItem('translator_api_keys_bn1'));
+  const [rememberApiKey, setRememberApiKey] = useState(() => {
+  try {
+    return !!localStorage.getItem('translator_api_keys_bn1');
+  } catch (e) {
+    return false;
+  }
+});
   const [showSettings, setShowSettings] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
   const [copiedId, setCopiedId] = useState(null);
@@ -217,7 +223,7 @@ const App = () => {
   useEffect(() => {
     // Inject Tailwind CSS engine
     const twScript = document.createElement('script');
-    twScript.src = 'https://cdn.tailwindcss.com';
+    twScript.src = 'https://unpkg.com/@tailwindcss/browser@4';
     document.head.appendChild(twScript);
 
     // Inject Custom Fonts (Kalpurush for Bangla, Scheherazade New for Arabic/Urdu, Plus Jakarta Sans for English)
