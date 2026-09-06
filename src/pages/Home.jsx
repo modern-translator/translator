@@ -75,9 +75,8 @@ export default function Home() {
           Move a book from one script to another, page by page, without losing its shape.
         </h1>
         <p className="mt-6 text-lg text-[#4B5563] max-w-xl leading-relaxed">
-          These tools read Arabic, Urdu, or English pages, keep the original layout intact,
-          and translate them into Bangla or English using Google's Gemini models &mdash;
-          entirely inside your browser.
+          These tools read Arabic, Urdu, or English pages, keep the original layout intact
+          and translate them into Bangla or English using Google's Gemini models entirely inside your browser.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link to="/bangla-translator-1" className="px-5 py-2.5 rounded-lg bg-[#14213D] text-white text-sm font-semibold hover:bg-[#1D2E52] transition-colors">
